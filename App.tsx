@@ -1,16 +1,33 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Header } from "./src/components/Header";
 
-export const App = () => {
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Thought Catalog!</Text>
-    </View>
+    <>
+      <SafeAreaView style={styles.appContainer}>
+        <ImageBackground
+          style={styles.backgroundImage}
+          source={require("./assets/bg-image.jpg")}
+        >
+          <View style={styles.contentContainer}>
+            <Header />
+            <Text>Welcome to Thought Catalog!</Text>
+          </View>
+        </ImageBackground>
+      </SafeAreaView>
+    </>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
+    flex: 1,
+  },
+  contentContainer: {
+    marginTop: 10,
+  },
+  backgroundImage: {
     flex: 1,
   },
 });
