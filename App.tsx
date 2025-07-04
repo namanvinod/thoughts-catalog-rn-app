@@ -1,6 +1,6 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Header } from "./src/components/Header";
+import { Dashboard } from "./src/screens/Dashboard";
 
 export default function App() {
   return (
@@ -11,8 +11,7 @@ export default function App() {
           source={require("./assets/bg-image.jpg")}
         >
           <View style={styles.contentContainer}>
-            <Header />
-            <Text>Welcome to Thought Catalog!</Text>
+            <Dashboard />
           </View>
         </ImageBackground>
       </SafeAreaView>
